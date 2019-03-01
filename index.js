@@ -88,7 +88,7 @@ class SQSClient {
             return reject(err);
           }
         }
-        return reject(new SQSError('Queue exists', 'QUEUE_EXISTS'));
+        return reject(new SQSError(`Queue exists: ${queueName}`, 'QUEUE_EXISTS'));
       })
     });
   }

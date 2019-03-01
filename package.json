@@ -1,6 +1,6 @@
 {
   "name": "gulp-aws-sqs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gulp Component to handle comunication with AWS SQS",
   "main": "index.js",
   "author": "Clovis Chedid",
