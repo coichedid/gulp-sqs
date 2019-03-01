@@ -80,7 +80,7 @@ class SQSClient {
                 console.log(err);
                 return reject(err);
               }
-              url = data.QueueUrl;
+              const url = data.QueueUrl;
               const tagParams = {
                 QueueUrl: url,
                 Tags: tags
