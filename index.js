@@ -61,7 +61,7 @@ class SQSClient {
     });
   }
 
-  createIfNotExists(queueName, attributes) { //Idempotent function only creates a topic if not exists
+  createIfNotExists(queueName, attributes, tags) { //Idempotent function only creates a topic if not exists
     return new Promise( (resolve, reject) => {
       const queryParams = {
         QueueName: queueName
@@ -80,7 +80,18 @@ class SQSClient {
                 console.log(err);
                 return reject(err);
               }
-              return resolve(data.QueueUrl);
+              url = data.QueueUrl;
+              const tagParams = {
+                QueueUrl: url,
+                Tags: tags
+              }
+              this.sqs.tagQueue(tagParams, (err, data) => {
+                if (err) {
+                  console.log(err);
+                  return reject(err);
+                }
+                return resolve(url);
+              })
             })
           }
           else {
