@@ -1,0 +1,14 @@
+{
+  "name": "gulp-aws-sqs",
+  "version": "1.0.0",
+  "description": "Gulp Component to handle comunication with AWS SQS",
+  "main": "index.js",
+  "author": "Clovis Chedid",
+  "repository": "github:coichedid/gulp-sqs",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "async": "^2.6.1",
+    "aws-sdk": "^2.393.0",
+    "uuid": "^3.3.2"
+  }
+}
